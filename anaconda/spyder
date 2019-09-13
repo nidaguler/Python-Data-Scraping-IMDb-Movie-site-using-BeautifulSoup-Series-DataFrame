@@ -99,10 +99,25 @@ new_df['movieRating'] = df.iloc[4,:]
 new_df['movieVotes'] = df.iloc[9,:]
 
 	
+
+new_df2=pd.DataFrame()
+new_df2['movieTitle'] = df.iloc[0,:]
+new_df2['movieDate'] = df.iloc[1,:]
+new_df2['movieRunTime'] = df.iloc[2,:]
+new_df2['movieGenre'] = df.iloc[3,:]
+new_df2['movieRating'] = df.iloc[4,:]
+
+new_df2['movieDescription'] = df.iloc[6,:]
+new_df2['movieDirector'] = df.iloc[7,:]
+new_df2['movieStars'] = df.iloc[8,:]
+new_df2['movieVotes'] = df.iloc[9,:]
+new_df2['movieGross'] = df.iloc[9,:]
+
+	
 sort_by_rating = new_df.sort_values('movieRating',ascending=False)
 sort_by_votes = new_df.sort_values('movieVotes',ascending=False)
 sort_by_rating_votes = new_df.sort_values(['movieRating','movieVotes'],ascending=False)
 
-
+export_csv = new_df2.to_csv (r'C:\Users\ben\Desktop\python ile siteden veri cekme\top100popmovts_dataframe.csv', index = None, header=True)
 
 
